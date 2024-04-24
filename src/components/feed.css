@@ -1,0 +1,66 @@
+
+
+/* styles.css */
+.container-fluid {
+  border-radius: 15px;
+  background-color:rgb(236, 236, 243); /* Cambia el color de fondo del contenedor */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.navbar {
+  /* background-color: navy; */
+  color: #ccc; /* Cambia el color del texto del navbar */
+}
+
+/* feed.css */
+.container{
+  color: rgb(236, 236, 243);
+  /* background-color: #0400ff; */
+}
+/* Estilos para el formulario de publicación de imágenes */
+.post-form {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .post-form button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .post-form button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Estilos para las tarjetas de publicaciones */
+  .post-card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilos para los íconos de "Me gusta" y "Comentar" */
+  .icon-button {
+    color: #ccc;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .icon-button:hover {
+    transform: scale(1.1);
+    /* color: #0400ff; */
+  }
+  

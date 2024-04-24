@@ -1,0 +1,115 @@
+.container {
+    background-color: rgba(179, 179, 179, 0.312); /* Fondo semi-transparente */
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 70px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    width: 95%;
+}
+.container-centered{
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+
+.form-control {
+    margin-bottom: 20px;
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.836);
+    border: none;
+    border-radius: 40px;
+    margin: auto;
+    font-weight: 200;
+    
+}
+
+.btn-primary {
+    background-color: #0666a5;
+    border: none;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+    justify-content: center;
+    margin: auto;
+    height: 50px;
+
+
+}
+
+.btn-primary:hover {
+    background-color: #0400ff;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo transparente */
+    padding: auto; /* Espacio interno */
+    border-radius: 30px; /* Bordes redondeados */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 500px; /* Ancho máximo */
+    margin: auto; /* Centrar horizontalmente */
+    height: 100%;
+    color: navy;
+    margin-top: 8px;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 40px;
+    color: aliceblue;
+}
+
+.container-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: auto;
+    border: #f7f7f7;
+    border-radius: 50%;/* Opcional: ajusta la altura de acuerdo a tus necesidades */
+}
+
+/* label {
+    display: block;
+    font-size: 18px;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    font-size: 20px;
+    padding: 0 10px;
+    font-weight: 300;
+    margin: 0;
+    margin-top: 2px;
+    text-align: center;
+} */
+
+.login-form-container {
+    position: relative; /* Para establecer un contexto de posicionamiento */
+}
+
+.image-overlay {
+    position: absolute; /* Para posicionar la imagen de forma absoluta */
+    top: 50; /* Colocar la imagen en la parte superior */
+    left: 0; /* Colocar la imagen en la parte izquierda */
+    width: 100%; /* Ajustar el ancho al 100% del contenedor */
+    height: 100%; /* Ajustar la altura al 100% del contenedor */
+    /* Colocar la imagen detrás del contenido */
+}
+
+.image-overlay img {
+    width: 100%; /* Ajustar el ancho al 100% del contenedor */
+    height: 100%; /* Ajustar la altura al 100% del contenedor */
+   /* Para que la imagen cubra todo el contenedor */
+}

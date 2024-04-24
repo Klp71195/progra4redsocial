@@ -1,0 +1,69 @@
+/* Reducir el tamaño de la lista de amigos */
+.friend-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Eliminar el margen para reducir el espacio */
+  }
+  
+  /* Reducir el tamaño de los elementos de la lista de amigos */
+  .friend-list li {
+    margin-bottom: 10px; /* Reducir el espacio entre elementos */
+  }
+  
+  /* Reducir el tamaño de las tarjetas de amigos */
+  .friend-card {
+    padding: 10px; /* Reducir el espacio interno */
+    margin-bottom: 10px; /* Reducir el espacio entre las tarjetas */
+  }
+  
+  /* Reducir el tamaño de la imagen de perfil */
+  .profile-img {
+    margin-right: 10px; /* Reducir el espacio entre la imagen y el texto */
+    width: 40px; /* Reducir el ancho */
+    height: 40px; /* Reducir la altura */
+  }
+  
+  /* Reducir el tamaño del texto */
+  .friend-card .card-body,
+  .friend-card .card-footer {
+    font-size: 14px; /* Reducir el tamaño de fuente */
+  }
+  
+  /* Estilos para los botones de agregar y eliminar */
+  .friend-card .card-footer button {
+    transition: transform 0.3s ease; /* Transición suave */
+  }
+  
+  /* Cuando se pasa el mouse sobre el botón de agregar */
+  .friend-card .card-footer button:hover {
+    transform: translateX(-5px); /* Desplazamiento hacia la izquierda */
+  }
+  
+  /* Cuando se pasa el mouse sobre el botón de eliminar */
+  .friend-card .card-footer button:last-child:hover {
+    transform: translateX(5px); /* Desplazamiento hacia la derecha */
+  }
+  
+  /* Estilo para el Offcanvas */
+.offcanvas {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo gris oscuro con opacidad */
+  }
+  
+  /* Estilo para las pestañas */
+  .nav-link {
+    color: white; /* Texto blanco */
+  }
+  
+  /* Estilo para las pestañas activas */
+  .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente blanco */
+  }
+  .friendship-container {
+    background-color: white; /* Fondo blanco */
+    padding: 10px; /* Ajusta el espacio alrededor del texto */
+  }
+  
+  .friendship-text {
+    color: black; /* Cambia el color del texto a negro para contrastar con el fondo blanco */
+  }
+  

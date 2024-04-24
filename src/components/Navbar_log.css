@@ -1,0 +1,57 @@
+.custom-navbar {
+  transition: background-color 0.3s ease;
+}
+
+.notification-icon {
+  margin-right: 10px;
+}
+
+.notification-card {
+  margin: 5px;
+}
+
+.notification-card:hover {
+  box-shadow: 0 4px 8px rgba(138, 142, 144, 0.581);
+}
+
+.icon-separator {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.icon-animation:hover {
+  transform: scale(1.1); /* Aumenta el tamaño al hacer hover */
+  transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
+/* Transición de color de fondo al hacer hover */
+.custom-navbar:hover {
+  background-color: #535353; /* Cambia el color de fondo al hacer hover */
+  transition: background-color 0.3s ease; /* Agrega una transición suave */
+}
+
+/* Cambio de color al hacer hover sobre los iconos */
+.icon:hover {
+  color: aqua; /* Cambia el color al hacer hover */
+}
+
+/* Animación de escala al hacer hover sobre los iconos */
+@keyframes iconHover {
+  0% {
+    transform: scale(2);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+.icon:hover {
+  animation: iconHover 1s ease;
+}
+.custom-modal .modal-dialog {
+  max-width: 90%; /* Ajusta el ancho máximo del modal al 90% del tamaño de la pantalla */
+  max-height: 90vh; /* Ajusta la altura máxima del modal al 90% de la altura de la pantalla */
+}

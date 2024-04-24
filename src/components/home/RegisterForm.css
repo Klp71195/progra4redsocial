@@ -1,0 +1,67 @@
+/* RegisterForm.css */
+
+.container {
+    background-color: rgba(41, 120, 204, 0.312);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 70px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    width: 95%;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    margin-bottom: 20px;
+    width: 90%;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.836);
+    border: none;
+    border-radius: 40px;
+    font-weight: 200;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Agrega sombra */
+}
+
+.btn-primary {
+    background-color: #0666a5; /* Color azul */
+    border: none;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+    height: 50px;
+    width: 200px; /* Ajusta el ancho del botón */
+    font-weight: bold; /* Añade negrita al texto */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Agrega sombra */
+}
+
+.btn-primary:hover {
+    background-color: #0400ff; /* Color azul más oscuro al pasar el cursor */
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+h2 {
+    color:  #0666a5; /* Establece el color azul para los títulos */
+    font-size: 24px; /* Cambia el tamaño de la fuente */
+    margin-bottom: 20px; /* Añade un espacio en la parte inferior */
+}
+
+/* Estilos para las etiquetas de formulario */
+label {
+    color: #0666a5; /* Establece el color azul para las etiquetas */
+}

@@ -9,7 +9,7 @@ import Sidebar from '../sidebar';
 
 export const ProfileUserData = () => {
     // Obtener el nombre de usuario de los parámetros de la URL
-    const [user, setUser] = useState({ email: '', username: '', profilePictureURL: '' });
+    const [user, setUser] = useState({ email: '', username: '', profilePictureURL: '', description: '' });
     const [currentUser, setCurrentUser] = useState({});
     const [showFriendsOffcanvas, setShowFriendsOffcanvas] = useState(false);
     const { userName } = useParams();
@@ -40,6 +40,7 @@ export const ProfileUserData = () => {
                 <img src={user.profilePictureURL} alt="This profile picture dont exist to this user" className="profile-picture" />
                 <h5 className='text-primary'>Nombre de Usuario: {user.username}</h5>
                 <h5 className='text-primary'>Correo Electrónico: {user.email}</h5>
+                <h5 className='text-primary'>Descripción: {user.description}</h5> 
 
                 {/* Post del perfil */}
                 <PostList currentUser={user.username} onlyUserPosts={true} />

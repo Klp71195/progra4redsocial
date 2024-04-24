@@ -41,7 +41,7 @@ export const sendFriendRequest = async (receiver, sender) => {
 }
 
 // Función para guardar los datos del usuario
-export const saveUserData = async (username, email, password, profilePicture) => {
+export const saveUserData = async (username, email, password, profilePicture, description) => {
   try {
     const storageRef = ref(storage, `profilePictures/${email}/${username}_pp`);
     await uploadBytes(storageRef, profilePicture);
@@ -50,7 +50,8 @@ export const saveUserData = async (username, email, password, profilePicture) =>
       username: username,
       email: email,
       password: password,
-      profilePictureURL: profilePictureURL
+      profilePictureURL: profilePictureURL,
+      description: description // Incluir la descripción del usuario en los datos guardados
     });
     console.log('Documento con ID:', docRef.id, 'agregado correctamente');
     return docRef.id;
@@ -59,6 +60,7 @@ export const saveUserData = async (username, email, password, profilePicture) =>
     throw error;
   }
 };
+
 
 // Función para encontrar un usuario por su correo electrónico
 export const findUserByEmail = async (email) => {

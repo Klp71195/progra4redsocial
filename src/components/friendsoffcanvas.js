@@ -266,7 +266,7 @@ function FriendsOffcanvas(props) {
               ))}
             </ul>
           </Tab>
-          <Tab eventKey="friendRequests" title="Solicitudes de Amistad">
+          <Tab eventKey="friendRequests" title="Interacciones de amistad">
             <ul className="discover-list">
               {friendRequests.map((request) => {
                 return (

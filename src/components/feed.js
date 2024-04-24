@@ -50,12 +50,12 @@ function Feed(props) {
           
     <div className="container-fluid" id="home">
         
-          <h1 className="text-center text-primary">Bienvenido a la red social</h1>
+          <h1 className="text-center text-primary">Bienvenidos Programadores</h1>
           
             <div className='text-center'>
             
             <Card className="post-form">
-              <Card.Header className="text-center" style={{color: 'navy'}}>Publica una imagen especial</Card.Header>
+              <Card.Header className="text-center" style={{color: 'navy'}}>Publica una imagen </Card.Header>
               <Card.Body>
                 <Form onSubmit={handlePostSubmit}>
                   <Form.Group controlId="formBasicDescription">

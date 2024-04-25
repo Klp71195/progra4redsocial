@@ -6,6 +6,7 @@ import PostList, { getUserDataByUserName } from '../../firebase/api';
 import FriendsOffcanvas from '../friendsoffcanvas';
 import Navbar_log from '../navbar_logged';
 import Sidebar from '../sidebar';
+import './ProfileUserData.css';
 
 export const ProfileUserData = () => {
     // Obtener el nombre de usuario de los parámetros de la URL

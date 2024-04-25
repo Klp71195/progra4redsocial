@@ -15,7 +15,7 @@ export const LoginForm = () => {
         const password = e.target.elements.formBasicPassword.value;
         try {
             const userData = await findUserByEmail(email);
-            if (userData) {
+            if (userData) {https://console.firebase.google.com/project/db-proykim/firestore?hl=es-419
                 if (sha256(password).toString() === userData.password) {
                     console.log("Logged in successfully");
                     setLoginError(false);

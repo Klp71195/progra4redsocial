@@ -132,24 +132,36 @@ function FriendsOffcanvas(props) {
   // Función para obtener la lista de personas que el usuario puede descubrir
   const fetchPeopleToDiscover = () => {
     setPeopleToDiscover([]);
-
+  
     const currentUser = props.username;
-    const q = query(collection(db, 'users'),
-      where('username', '!=', currentUser));
+  
+    const q = query(collection(db, 'friendRequests'),
+      where('status', '==', 'accepted'),
+      where('receiver', '==', currentUser));
+  
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const usersList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data(), requestSent: false }));
-      const peopleToDiscoverList = usersList.filter(user =>
-        !friends.some(friend => user.username === (friend.sender === props.username ? friend.receiver : friend.sender))
-      );
-
-      peopleToDiscoverList.map(person => {
-        if (friendRequests.some(request => request.sender === person.username || request.receiver === person.username)) {
-          person.requestSent = true;
-        }
+      const friendsList = querySnapshot.docs.map(doc => doc.data().sender);
+  
+      onSnapshot(collection(db, 'users'), (querySnapshot) => {
+        const usersList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data(), requestSent: false }));
+  
+        // Filtrar usuarios para excluir a los amigos del usuario actual
+        const peopleToDiscoverList = usersList.filter(user =>
+          !friendsList.includes(user.username) && user.username !== currentUser
+        );
+  
+        // Filtrar personas por descubrir para excluir las solicitudes enviadas
+        const filteredPeopleToDiscoverList = peopleToDiscoverList.filter(person =>
+          !friendRequests.some(request =>
+            (request.sender === person.username && request.receiver === currentUser) ||
+            (request.receiver === person.username && request.sender === currentUser)
+          )
+        );
+  
+        setPeopleToDiscover(filteredPeopleToDiscoverList);
       });
-
-      setPeopleToDiscover(peopleToDiscoverList);
     });
+  
     return unsubscribe;
   };
 

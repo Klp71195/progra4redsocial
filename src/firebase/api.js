@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs, onSnapshot, query, where } from 'firebase/firestore';
+import { addDoc, collection, getDocs, onSnapshot, query, where, orderBy } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
@@ -137,7 +137,7 @@ export function PostList({ refresh, currentUser, onlyUserPosts }) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'posts'));
+        const querySnapshot = await getDocs(query(collection(db, 'posts'), orderBy('postDate', 'desc')));
         const postList = [];
         querySnapshot.forEach((doc) => {
           const post = {
@@ -146,13 +146,13 @@ export function PostList({ refresh, currentUser, onlyUserPosts }) {
           };
           postList.push(post);
         });
-        postList.sort((a, b) => new Date(b.postDate) - new Date(a.postDate));
         setPosts(postList);
       } catch (error) {
         console.error('Error fetching posts: ', error);
       }
     };
     fetchPosts();
+    
   }, [refresh]);
 
   const sortedPosts = [...posts].filter((post) => {

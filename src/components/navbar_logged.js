@@ -11,6 +11,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import { db } from '../firebase/config';
 import './Navbar_log.css';
+import { BellFill } from 'react-bootstrap-icons';
+
 
 
 
@@ -103,39 +105,42 @@ function Navbar_log(props) {
         <Navbar.Brand href="/" style={{color: 'navy'}}>PHOTOBOOKCODE</Navbar.Brand>
 
         <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-between"
-          title={
-            <div>
-              <Bell size={20} style={{ ...iconStyle, marginRight: '15px', color:'navy' }} /> { }
-              {notificationCount > 0 && <Badge bg="danger">{notificationCount}</Badge>}
-            </div>
-          }
-          id="notification-nav-dropdown"
-          style={{ ...dropdownTitleStyle, maxWidth: '300px', minWidth: '200px', whiteSpace: 'normal' }}>
-          {friendRequests.length === 0 ? (
-            <NavDropdown.Item>
-              <span style={{color: 'navy'}}>No hay notificaciones aún</span>
+      <Navbar.Collapse className="justify-content-between"
+        title={
+          <div>
+            <BellFill size={20} style={{ ...iconStyle, marginRight: '15px', color:'navy' }} /> { }
+            {notificationCount > 0 && <Badge bg="danger">{notificationCount}</Badge>}
+          </div>
+        }
+        id="notification-nav-dropdown"
+        style={{ ...dropdownTitleStyle, maxWidth: '300px', minWidth: '200px', whiteSpace: 'normal' }}>
+        {/* Condición para mostrar el icono o el texto */}
+        {friendRequests.length === 0 ? (
+          // Muestra un ícono si no hay notificaciones pendientes
+          <NavDropdown.Item>
+            <BellFill size={20} style={{ marginRight: '5px', color: 'navy' }} />
+          </NavDropdown.Item>
+        ) : (
+          // Muestra las solicitudes de amistad si las hay
+          friendRequests.map((request, index) => (
+            <NavDropdown.Item key={index}>
+              <Card>
+                <Card.Body>
+                  {request.sender} te ha enviado una solicitud de conexión
+                </Card.Body>
+                <Card.Footer>
+                  <Button variant="success" onClick={() => handleAcceptRequest(request)}>
+                    <PersonFillAdd color="navy" size={20} />
+                  </Button>
+                  <Button variant="danger" onClick={() => handleRejectRequest(request.id)}>
+                    <Ban color="navy" size={20} />
+                  </Button>
+                </Card.Footer>
+              </Card>
             </NavDropdown.Item>
-          ) : (
-            friendRequests.map((request, index) => (
-              <NavDropdown.Item key={index}>
-                <Card>
-                  <Card.Body>
-                    {request.sender} te ha enviado una solicitud de conexión
-                  </Card.Body>
-                  <Card.Footer>
-                    <Button variant="success" onClick={() => handleAcceptRequest(request)}>
-                      <PersonFillAdd color="navy" size={20} />
-                    </Button>
-                    <Button variant="danger" onClick={() => handleRejectRequest(request.id)}>
-                      <Ban color="navy" size={20} />
-                    </Button>
-                  </Card.Footer>
-                </Card>
-              </NavDropdown.Item>
-            ))
-          )}
-        </Navbar.Collapse>
+          ))
+        )}
+      </Navbar.Collapse>
 
         {/* Icono de búsqueda con funcionalidad */}
         <Search className="icon" color="navy" size={20} style={{ marginRight: '150px', cursor: 'pointer', color: '#000' }} onClick={openSearchDialog} />
